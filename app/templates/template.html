@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+<html>
+
+<head>
+    <title>IQ Test Page</title>
+</head>
+
+<body>
+
+    <h2>IQ Test</h2>
+
+    <form method="post" action="/results">
+        <h3> {{ questions[0]["question"] }} </h3>
+        <input type="radio" name="widow" value="Yes">Yes<br>
+        <input type="radio" name="widow" value="No">No<br>
+
+        <h3>{{ questions[1]["question"] }}</h3>
+        <input type="radio" name="bat" value="15 Cents">15 Cents<br>
+        <input type="radio" name="bat" value="5 Cents">5 Cents <br>
+        <input type="radio" name="bat" value="10 Cents">10 Cents <br>
+
+        <h3>{{ questions[2]["question"] }}</h3>
+        <input type="radio" name="forest" value="plant">Plant<br>
+        <input type="radio" name="forest" value="branch">Branch<br>
+        <input type="radio" name="forest" value="leaf">Leaf<br>
+        <input type="radio" name="forest" value="mangrove">Mangrove<br>
+
+
+        <h3> {{ questions[3]["question"] }}</h3>
+        <input type="radio" name="july" value="Yes">Yes<br>
+        <input type="radio" name="july" value="No">No<br>
+
+        <h3>{{ questions[4]["question"] }}</h3>
+        <input type="radio" name="race" value="1st">1st<br>
+        <input type="radio" name="race" value="2nd">2nd<br>
+        <input type="radio" name="race" valud="3rd">3rd<br>
+
+        <h3>{{ questions[5]["question"] }}</h3>
+        <input type="radio" name="bicycles" value="6">6<br>
+        <input type="radio" name="bicycles" value="4">4<br>
+        <input type="radio" name="bicycles" value="2">2<br>
+        <input type="radio" name="bicycles" value="1">1<br>
+
+        <h3>{{ questions[6]["question"] }}</h3>
+        <input type="radio" name="height" value="Bill is taller than Peter">Bill is taller than Peter<br>
+        <input type="radio" name="height" value="Bill is shorter than Peter">Bill is shorter than Peter<br>
+        <input type="radio" name="height" value="Bill is as tall as peter">Bill is as tall as Peter<br>
+        <input type="radio" name="height" value="It is impossible to tel whether Bill or Peter is taller">It is impossible to tell whether Bill or Peter is taller<br>
+
+        <h3>{{ questions[7]["question"] }}</h3>
+        <input type="radio" name="family" value="Bob">Bob<br>
+        <input type="radio" name="family" value="Momo">Momo<br>
+        <input type="radio" name="family" value="meme">Meme<br>
+        <input type="radio" name="family" value="mumu">Mumu<br>
+
+        <h3>{{ questions[8]["question"] }}</h3>
+        <input type="radio" name="Math" value="25">25<br>
+        <input type="radio" name="Math" value="90">90<br>
+        <input type="radio" name="Math" value="70">70<br>
+        <input type="radio" name="Math" value="50">50<br>
+
+        <h3>{{ questions[9]["question"] }}</h3>
+        <input type="radio" name="Days" value="4">4<br>
+        <input type="radio" name="Days" value="12">12<br> 
+        <input type="radio" name="Days" value="1">1<br>
+        <input type="radio" name="Days" value="7">7<br>
+        <input type="radio" name=Days value="3">3<br>
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>
+
+<!--<form action="#">-->
+<!--    <p>-->
+<!--        <label>-->
+<!--        <input name="group1" type="radio" checked />-->
+<!--        <span>Red</span>-->
+<!--      </label>-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <label>-->
+<!--        <input name="group1" type="radio" />-->
+<!--        <span>Yellow</span>-->
+<!--      </label>-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <label>-->
+<!--        <input class="with-gap" name="group1" type="radio"  />-->
+<!--        <span>Green</span>-->
+<!--      </label>-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <label>-->
+<!--        <input name="group1" type="radio" disabled="disabled" />-->
+<!--        <span>Brown</span>-->
+<!--      </label>-->
+<!--    </p>-->
+<!--</form>-->
