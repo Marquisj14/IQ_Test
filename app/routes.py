@@ -47,7 +47,7 @@ def results():
         score+=10
         
     if bat== "5 cents":
-        score+=15
+        score+=20
         
     if forest== "Leaf":
         score+= 10
@@ -59,7 +59,7 @@ def results():
         score+=10
         
     if bicycles=="4 people":
-        score+=10
+        score+=20
             
     if height=="It is impossible to tell whether Bill or Peter is taller":
         score+=15
@@ -68,7 +68,7 @@ def results():
         score+=10
         
     if Math=="70":
-        score+=10
+        score+=20
         
     if Days=="12":
         score+=10
