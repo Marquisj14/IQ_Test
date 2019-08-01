@@ -1,101 +1,203 @@
 <!DOCTYPE html>
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
 <html>
 
 <head>
     <title>IQ Test Page</title>
-</head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/static/assets/css/styles.css" />
+    <link rel="stylesheet" href="/static/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+    <!--   <style>-->
+    <!--       The container .container {-->
+    <!--           display: block;-->
+    <!--           position: relative;-->
+    <!--           padding-left: 35px;-->
+    <!--           margin-bottom: 12px;-->
+    <!--           cursor: pointer;-->
+    <!--           font-size: 22px;-->
+    <!--           -webkit-user-select: none;-->
+    <!--           -moz-user-select: none;-->
+    <!--           -ms-user-select: none;-->
+    <!--           user-select: none;-->
+    <!--       }-->
 
-<body>
+    <!--       Hide the browser's default radio button -->
+    <!--.container input {-->
+    <!--           position: absolute;-->
+    <!--           opacity: 0;-->
+    <!--           cursor: pointer;-->
+    <!--       }-->
 
-    <h2>IQ Test</h2>
+    <!--       Create a custom radio button .checkmark {-->
+    <!--           position: absolute;-->
+    <!--           top: 0;-->
+    <!--           left: 0;-->
+    <!--           height: 25px;-->
+    <!--           width: 25px;-->
+    <!--           background-color: #eee;-->
+    <!--           border-radius: 50%;-->
+    <!--       }-->
 
-    <form method="post" action="/results">
-        <h3> {{ questions[0]["question"] }} </h3>
-        <input type="radio" name="widow" value="Yes">Yes<br>
-        <input type="radio" name="widow" value="No">No<br>
+    <!--       On mouse-over,-->
+    <!--       add a grey background color .container:hover input~.checkmark {-->
+    <!--           background-color: #ccc;-->
+    <!--       }-->
 
-        <h3>{{ questions[1]["question"] }}</h3>
-        <input type="radio" name="bat" value="15 Cents">15 Cents<br>
-        <input type="radio" name="bat" value="5 Cents">5 Cents <br>
-        <input type="radio" name="bat" value="10 Cents">10 Cents <br>
+    <!--       When the radio button is checked,-->
+    <!--       add a blue background .container input:checked~.checkmark {-->
+    <!--           background-color: #2196F3;-->
+    <!--       }-->
 
-        <h3>{{ questions[2]["question"] }}</h3>
-        <input type="radio" name="forest" value="plant">Plant<br>
-        <input type="radio" name="forest" value="branch">Branch<br>
-        <input type="radio" name="forest" value="leaf">Leaf<br>
-        <input type="radio" name="forest" value="mangrove">Mangrove<br>
+    <!--       Create the indicator (the dot/circle - hidden when not checked) .checkmark:after {-->
+    <!--           content: "";-->
+    <!--           position: absolute;-->
+    <!--           display: none;-->
+    <!--       }-->
+
+    <!--       Show the indicator (dot/circle) when checked .container input:checked~.checkmark:after {-->
+    <!--           display: block;-->
+    <!--       }-->
+
+    <!--       Style the indicator (dot/circle) .container .checkmark:after {-->
+    <!--           top: 9px;-->
+    <!--           left: 9px;-->
+    <!--           width: 8px;-->
+    <!--           height: 8px;-->
+    <!--           border-radius: 30%;-->
+    <!--           background: white;-->
+    <!--       }-->
+    <!--   </style>-->
+    <!--   /*</head>*/ /*-->
+
+    <!--<article class="container box style3">-->
+
+    <!--<body>*/ /*-->
+    <!--    <h2>IQ Test</h2>*/ /*-->
+    <!--    <form method="post" action="/results">*/ /*-->
+    <!--        <h3> {{ questions[0]["question"] }} </h3>*/ /* <label class="container">*/-->
+    <!--/*        <input id="test" type="radio" name="widow" value="Yes">Yes<br>*/-->
+    <!--/*         <span class="checkmark"></span>*/-->
+    <!--/*         </label>*/ /* <input type="radio" name="widow" value="No">No<br>*/ /*-->
+    <!--        <h3>{{ questions[1]["question"] }}</h3>*/ /* <input type="radio" name="bat" value="15 Cents">15 Cents<br>*/ /* <input type="radio" name="bat" value="5 Cents">5 Cents <br>*/ /* <input type="radio" name="bat" value="10 Cents">10 Cents <br>*/ /*-->
+    <!--        <h3>{{ questions[2]["question"] }}</h3>*/ /* <input type="radio" name="forest" value="plant">Plant<br>*/ /* <input type="radio" name="forest" value="branch">Branch<br>*/ /* <input type="radio" name="forest" value="leaf">Leaf<br>*/ /* <input type="radio"-->
+    <!--            name="forest" value="mangrove">Mangrove<br>*/ /*-->
+    <!--        <h3> {{ questions[3]["question"] }}</h3>*/ /* <input type="radio" name="july" value="Yes">Yes<br>*/ /* <input type="radio" name="july" value="No">No<br>*/ /*-->
+    <!--        <h3>{{ questions[4]["question"] }}</h3>*/ /* <input type="radio" name="race" value="1st">1st<br>*/ /* <input type="radio" name="race" value="2nd">2nd<br>*/ /* <input type="radio" name="race" valud="3rd">3rd<br>*/ /*-->
+    <!--        <h3>{{ questions[5]["question"] }}</h3>*/ /* <input type="radio" name="bicycles" value="6">6<br>*/ /* <input type="radio" name="bicycles" value="4">4<br>*/ /* <input type="radio" name="bicycles" value="2">2<br>*/ /* <input type="radio" name="bicycles"-->
+    <!--            value="1">1<br>*/ /*-->
+    <!--        <h3>{{ questions[6]["question"] }}</h3>*/ /* <input type="radio" name="height" value="Bill is taller than Peter">Bill is taller than Peter<br>*/ /* <input type="radio" name="height" value="Bill is shorter than Peter">Bill is shorter than Peter<br>*/-->
+    <!--        /* <input type="radio" name="height" value="Bill is as tall as peter">Bill is as tall as Peter<br>*/ /* <input type="radio" name="height" value="It is impossible to tel whether Bill or Peter is taller">It is impossible to tell whether Bill or-->
+    <!--        Peter is taller<br>*/ /*-->
+    <!--        <h3>{{ questions[7]["question"] }}</h3>*/ /* <input type="radio" name="family" value="Bob">Bob<br>*/ /* <input type="radio" name="family" value="Momo">Momo<br>*/ /* <input type="radio" name="family" value="meme">Meme<br>*/ /* <input type="radio" name="family"-->
+    <!--            value="mumu">Mumu<br>*/ /*-->
+    <!--        <h3>{{ questions[8]["question"] }}</h3>*/ /* <input type="radio" name="Math" value="25">25<br>*/ /* <input type="radio" name="Math" value="90">90<br>*/ /* <input type="radio" name="Math" value="70">70<br>*/ /* <input type="radio" name="Math" value="50">50<br>*/-->
+    <!--        /*-->
+    <!--        <h3>{{ questions[9]["question"] }}</h3>*/ /* <input type="radio" name="Days" value="4">4<br>*/ /* <input type="radio" name="Days" value="12">12<br>*/ /* <input type="radio" name="Days" value="1">1<br>*/ /* <input type="radio" name="Days" value="7">7<br>*/-->
+    <!--        /* <input type="radio" name=Days value="3">3<br>*/ /* <input type="submit">*/ /* </form>*/ /*-->
+    <!--Scripts -->
+    <!--    <script src="/static/assets/js/jquery.min.js"></script>*/ /*-->
+    <!--    <script src="/static/assets/js/jquery.scrolly.min.js"></script>*/ /*-->
+    <!--    <script src="/static/assets/js/jquery.poptrox.min.js"></script>*/ /*-->
+    <!--    <script src="/static/assets/js/browser.min.js"></script>*/ /*-->
+    <!--    <script src="/static/assets/js/breakpoints.min.js"></script>*/ /*-->
+    <!--    <script src="/static/assets/js/util.js"></script>*/ /*-->
+    <!--    <script src="/static/assets/js/main.js"></script>*/ /*-->
 
 
-        <h3> {{ questions[3]["question"] }}</h3>
-        <input type="radio" name="july" value="Yes">Yes<br>
-        <input type="radio" name="july" value="No">No<br>
+    <!--</body>*/ /*-->
+    <!--</article>-->
 
-        <h3>{{ questions[4]["question"] }}</h3>
-        <input type="radio" name="race" value="1st">1st<br>
-        <input type="radio" name="race" value="2nd">2nd<br>
-        <input type="radio" name="race" valud="3rd">3rd<br>
+    <!--</html>*/-->
 
-        <h3>{{ questions[5]["question"] }}</h3>
-        <input type="radio" name="bicycles" value="6">6<br>
-        <input type="radio" name="bicycles" value="4">4<br>
-        <input type="radio" name="bicycles" value="2">2<br>
-        <input type="radio" name="bicycles" value="1">1<br>
+    <html>
 
-        <h3>{{ questions[6]["question"] }}</h3>
-        <input type="radio" name="height" value="Bill is taller than Peter">Bill is taller than Peter<br>
-        <input type="radio" name="height" value="Bill is shorter than Peter">Bill is shorter than Peter<br>
-        <input type="radio" name="height" value="Bill is as tall as peter">Bill is as tall as Peter<br>
-        <input type="radio" name="height" value="It is impossible to tel whether Bill or Peter is taller">It is impossible to tell whether Bill or Peter is taller<br>
+    <head>
+        <title>IQ Test Page</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/static/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+    </head>
 
-        <h3>{{ questions[7]["question"] }}</h3>
-        <input type="radio" name="family" value="Bob">Bob<br>
-        <input type="radio" name="family" value="Momo">Momo<br>
-        <input type="radio" name="family" value="meme">Meme<br>
-        <input type="radio" name="family" value="mumu">Mumu<br>
+    <body class="is-preload">
+        <section id="header">
+            <header>
+                <h1>IQ Test</h1>
+            </header>
 
-        <h3>{{ questions[8]["question"] }}</h3>
-        <input type="radio" name="Math" value="25">25<br>
-        <input type="radio" name="Math" value="90">90<br>
-        <input type="radio" name="Math" value="70">70<br>
-        <input type="radio" name="Math" value="50">50<br>
+            <form id="form1" method="post" action="/results">
+                <h3> {{ questions[0]["question"] }} </h3><br>
+                <input type="radio" name="widow" value="Yes">Yes<br>
+                <input type="radio" name="widow" value="No">No<br><br>
 
-        <h3>{{ questions[9]["question"] }}</h3>
-        <input type="radio" name="Days" value="4">4<br>
-        <input type="radio" name="Days" value="12">12<br> 
-        <input type="radio" name="Days" value="1">1<br>
-        <input type="radio" name="Days" value="7">7<br>
-        <input type="radio" name=Days value="3">3<br>
-        <input type="submit">
-    </form>
+                <h3>{{ questions[1]["question"] }}</h3><br>
+                <input type="radio" name="bat" value="15 Cents">15 Cents<br>
+                <input type="radio" name="bat" value="5 Cents">5 Cents <br>
+                <input type="radio" name="bat" value="10 Cents">10 Cents <br><br>
 
-</body>
+                <h3>{{ questions[2]["question"] }}</h3><br>
+                <input type="radio" name="forest" value="plant">Plant<br>
+                <input type="radio" name="forest" value="branch">Branch<br>
+                <input type="radio" name="forest" value="leaf">Leaf<br>
+                <input type="radio" name="forest" value="mangrove">Mangrove<br><br>
 
-</html>
 
-<!--<form action="#">-->
-<!--    <p>-->
-<!--        <label>-->
-<!--        <input name="group1" type="radio" checked />-->
-<!--        <span>Red</span>-->
-<!--      </label>-->
-<!--    </p>-->
-<!--    <p>-->
-<!--        <label>-->
-<!--        <input name="group1" type="radio" />-->
-<!--        <span>Yellow</span>-->
-<!--      </label>-->
-<!--    </p>-->
-<!--    <p>-->
-<!--        <label>-->
-<!--        <input class="with-gap" name="group1" type="radio"  />-->
-<!--        <span>Green</span>-->
-<!--      </label>-->
-<!--    </p>-->
-<!--    <p>-->
-<!--        <label>-->
-<!--        <input name="group1" type="radio" disabled="disabled" />-->
-<!--        <span>Brown</span>-->
-<!--      </label>-->
-<!--    </p>-->
-<!--</form>-->
+                <h3> {{ questions[3]["question"] }}</h3><br>
+                <input type="radio" name="july" value="Yes">Yes<br>
+                <input type="radio" name="july" value="No">No<br><br>
+
+                <h3>{{ questions[4]["question"] }}</h3><br>
+                <input type="radio" name="race" value="1st">1st<br>
+                <input type="radio" name="race" value="2nd">2nd<br>
+                <input type="radio" name="race" valud="3rd">3rd<br><br>
+
+                <h3>{{ questions[5]["question"] }}</h3><br>
+                <input type="radio" name="bicycles" value="6">6<br>
+                <input type="radio" name="bicycles" value="4">4<br>
+                <input type="radio" name="bicycles" value="2">2<br>
+                <input type="radio" name="bicycles" value="1">1<br><br>
+
+                <h3>{{ questions[6]["question"] }}</h3><br>
+                <input type="radio" name="height" value="Bill is taller than Peter">Bill is taller than Peter<br>
+                <input type="radio" name="height" value="Bill is shorter than Peter">Bill is shorter than Peter<br>
+                <input type="radio" name="height" value="Bill is as tall as peter">Bill is as tall as Peter<br>
+                <input type="radio" name="height" value="It is impossible to tel whether Bill or Peter is taller">It is impossible to tell whether Bill or Peter is taller<br><br>
+
+                <h3>{{ questions[7]["question"] }}</h3><br>
+                <input type="radio" name="family" value="Bob">Bob<br>
+                <input type="radio" name="family" value="Momo">Momo<br>
+                <input type="radio" name="family" value="Meme">Meme<br>
+                <input type="radio" name="family" value="Mumu">Mumu<br><br>
+
+                <h3>{{ questions[8]["question"] }}</h3><br>
+                <input type="radio" name="math" value="25">25<br>
+                <input type="radio" name="math" value="90">90<br>
+                <input type="radio" name="math" value="70">70<br>
+                <input type="radio" name="math" value="50">50<br><br>
+
+                <h3>{{ questions[9]["question"] }}</h3><br>
+                <input type="radio" name="days" value="4">4<br>
+                <input type="radio" name="days" value="12">12<br>
+                <input type="radio" name="days" value="1">1<br>
+                <input type="radio" name="days" value="7">7<br>
+                <input type="radio" name="days" value="3">3<br><br>
+                <input type="submit">
+            </form>
+
+        </section>
+
+
+
+        <!--Scripts-->
+        <script src="/static/assets/js/jquery.min.js"></script>
+        <script src="/static/assets/js/jquery.scrolly.min.js"></script>
+        <script src="/static/assets/js/jquery.poptrox.min.js"></script>
+        <script src="/static/assets/js/browser.min.js"></script>
+        <script src="/static/assets/js/breakpoints.min.js"></script>
+        <script src="/static/assets/js/util.js"></script>
+        <script src="/static/assets/js/main.js"></script>
+
+    </body>
+
+    </html>

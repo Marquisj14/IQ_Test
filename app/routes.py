@@ -9,8 +9,7 @@ def index():
     
     return render_template("index.html")
 
-@app.route('/questions')
-
+@app.route('/questions' , methods = ['GET' , 'POST'])
 def template():
     return render_template("template.html", questions = model.questions)
     
@@ -21,15 +20,15 @@ def results():
     message=""
     
     userdata=dict(request.form)
-    print (userdata)
+    print(userdata)
     widow=userdata["widow"]
-    print (widow)
+    print(widow)
     bat=userdata["bat"]
-    print (bat)
+    print(bat)
     forest=userdata["forest"]
     print (forest)
     july=userdata["july"]
-    print (july)
+    print(july)
     race=userdata["race"]
     print(race)
     bicycles=userdata["bicycles"]
@@ -38,12 +37,12 @@ def results():
     print(height)
     family=userdata["family"]
     print(family)
-    Math=userdata["Math"]
-    print(Math)
-    Days=userdata["Days"]
-    print(Days)
+    math=userdata["math"]
+    print(math)
+    days=userdata["days"]
+    print(days)
     
-    if widow== "no":
+    if widow== "No":
         score+=10
         
     if bat== "5 cents":
@@ -67,10 +66,10 @@ def results():
     if family=="Bob":
         score+=10
         
-    if Math=="70":
+    if math=="70":
         score+=20
         
-    if Days=="12":
+    if days=="12":
         score+=10
     
      
@@ -81,19 +80,19 @@ def results():
         message="very high! outstanding performance "
         
     elif score >= 100:
-        message="High average! You're very talented! ?"
+        message="High average! You're very talented! "
         
     elif score >= 90:
-         message="Average!You're doing a good job"
+         message="Average!You're so thoughtful"
         
     elif score >= 80:
-        message="Low average. "
+        message="Low average.I think you're doing okay! Don't give up "
         
     elif score >= 70:
-        message="very low"
+        message="very low. I believe you'll do good next time. Don't worry!"
         
     elif score >= 69 :
-        message="Extremely low. "
+        message="Extremely low. Keep trying to get a better score! Good luck! "
     
     return render_template('results.html', score=score, message=message)
     
