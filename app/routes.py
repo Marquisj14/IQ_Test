@@ -16,7 +16,7 @@ def template():
         # TODO: write code...
 @app.route('/results' , methods = ['GET' , 'POST'])
 def results():
-    score = 50
+    score = 0
     message=""
     
     userdata=dict(request.form)
@@ -61,7 +61,7 @@ def results():
         score+=20
             
     if height=="It is impossible to tell whether Bill or Peter is taller":
-        score+=15
+        score+=10
         
     if family=="Bob":
         score+=10
@@ -74,25 +74,25 @@ def results():
     
      
     if score>= 130 :
-        message= "Extremely high!What a genious!Aren't you proud of yourself?"
+        message= "Extremely high! What a genious! Aren't you proud of yourself?"
         
     elif score >= 120:
-        message="very high! outstanding performance "
+        message="Very high! Outstanding Performance! "
         
     elif score >= 100:
         message="High average! You're very talented! "
         
     elif score >= 90:
-         message="Average!You're so thoughtful"
+         message="Average! Wanna try again?"
         
     elif score >= 80:
-        message="Low average.I think you're doing okay! Don't give up "
+        message="Low average. I think you're doing okay! Don't give up! "
         
     elif score >= 70:
-        message="very low. I believe you'll do good next time. Don't worry!"
+        message="Very Low. I believe you'll do good next time. Don't worry!"
         
     elif score >= 69 :
-        message="Extremely low. Keep trying to get a better score! Good luck! "
+        message="Extremely low. Keep trying to get a better score! Good luck!"
     
     return render_template('results.html', score=score, message=message)
     
