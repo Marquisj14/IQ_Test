@@ -39,8 +39,8 @@ def results():
     print(family)
     math=userdata["math"]
     print(math)
-    days=userdata["days"]
-    print(days)
+    months=userdata["months"]
+    print(months)
     
     if widow== "No":
         score+=10
@@ -57,7 +57,7 @@ def results():
     if race=="2nd":
         score+=10
         
-    if bicycles=="4 people":
+    if bicycles=="4":
         score+=20
             
     if height=="It is impossible to tell whether Bill or Peter is taller":
@@ -69,12 +69,12 @@ def results():
     if math=="70":
         score+=20
         
-    if days=="12":
+    if months=="12":
         score+=10
     
      
     if score>= 130 :
-        message= "Extremely high! What a genious! Aren't you proud of yourself?"
+        message= "Extremely high! What a genius! Aren't you proud of yourself?"
         
     elif score >= 120:
         message="Very high! Outstanding Performance! "
